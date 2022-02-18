@@ -18,7 +18,8 @@ class PostImagesController < ApplicationController
 
   # 投稿一覧画面
   def index
-    @post_images = PostImage.all
+    # @post_images = PostImage.all
+    @post_images = PostImage.page(params[:page]).reverse_order
 
   end
 

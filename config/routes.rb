@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :post_images, only: [:new, :create, :index, :show, :destroy] do
     resources :post_comments, only: [:create, :destroy]
+    # favoritesのshowページが不要で、idの受け渡しも必要ないので、resourceとなる
+    resource :favorites, only: [:create, :destroy]
   end
 
 end
